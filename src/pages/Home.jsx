@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import handler from "../../api/news";
 
 export default function Home() {
   const [lang, setLang] = useState("en");
@@ -8,26 +7,29 @@ export default function Home() {
   const [news, setNews] = useState([]);
 
   async function getNews() {
-    const data = await handler(country, lang); 
-    if (data) { 
-      setNews(data); 
+    try {
+      const url = `/api/news?country=${country}&lang=${lang}`;
+      const response = await axios.get(url);
+      setNews(response.data);
+    } catch (error) {
+      setNews([]); 
     }
   }
 
-  function renderNews(){
-    if(news.length > 0){
-      return( news.map((notice) => {
-        <div key={notice.id}>
+  function renderNews() {
+    if (news.length > 0) {
+      return news.map((notice) => (
+        <div key={notice.url}>
           <h2>{notice.title}</h2>
           <p>{notice.content}</p>
         </div>
-      }))
-    } else{
-      return(
+      ));
+    } else {
+      return (
         <div>
           <h2>sem noticias</h2>
         </div>
-      )
+      );
     }
   }
 
