@@ -1,27 +1,29 @@
 import { useState } from "react";
 import { useForm } from 'react-hook-form';
-
+import axios from 'axios';
 
 export default function Home() {
-  const [lang, setLang] = useState("en");
-  const [country, setCountry] = useState("us");
   const [news, setNews] = useState([]);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    defaultValues: {
+      lang: "en",
+      country: "us"
+    }
+  });
+
   const onSubmit = data => {
-    setCountry(data.country)
-    setLang(data.lang)
-    getNews()
+    getNews(data.lang, data.country);
   };
 
-
-  async function getNews() {
+  async function getNews(lang, country) {
     try {
       const response = await axios.get(
-        `/api/news?lang=${lang}&country=${country}`
+        `/api/news?lang=${lang}&country=${country}` 
       );
 
-      setNews(response);
+      setNews(response.data);
     } catch (error) {
+      console.error("Erro ao buscar notícias:", error);
       setNews([]); 
     }
   }
@@ -29,8 +31,8 @@ export default function Home() {
   function renderNews() {
     if (news.length > 0) {
       return news.map((notice) => (
-        <div key={notice.id}>
-          <img src={notice.img} alt="image" />
+        <div key={notice.url}>
+          <img src={notice.image} alt={notice.title || "image"} />
           <h2 className="text-3xl text-blue-500">{notice.title}</h2>
           <p>{notice.description}</p>
         </div>
@@ -62,8 +64,8 @@ export default function Home() {
           <option value="es">Spain</option>
         </select>
 
-      <button type="submit" className="bg-blue-700" >Search</button>
-    </form>
+        <button type="submit" className="bg-blue-700" >Search</button>
+      </form>
 
       <hr />
 

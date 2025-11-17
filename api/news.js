@@ -1,13 +1,7 @@
 import axios from "axios";
 
-const ENVIROMENT = import.meta.env.ENVIROMENT;
-let API_KEY;
+const API_KEY = process.env.GNEWS_API_KEY;
 
-if (ENVIROMENT == "Production") {
-  API_KEY = process.env.GNEWS_API_KEY  
-} else {
-  API_KEY = import.meta.env.VITE_GNEWS_API_KEY
-}
 
 export default async function handler(request, response) { 
   try {
@@ -23,10 +17,10 @@ export default async function handler(request, response) {
     
     console.log("macaco");
 
-
     return response.status(200).json(apiResponse.data.articles);
 
   } catch (error) {
+    console.error(error);
     return response.status(500).json({ error: "Falha ao buscar notícias", details: error.message });
   }
 }
