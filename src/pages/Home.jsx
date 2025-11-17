@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <div>
       <h1>Search news</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
         <select {...register("lang", { required: true })}>
           <option value="en">en</option>
           <option value="pt">pt</option>
@@ -60,7 +60,7 @@ export default function Home() {
           <option value="es">Spain</option>
         </select>
 
-      <button type="submit">Search</button>
+      <button type="submit" className="bg-blue-700" >Search</button>
     </form>
 
       <hr />
