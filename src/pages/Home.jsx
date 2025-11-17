@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useForm } from 'react-hook-form';
-import handler from "../../api/news";
 
 
 export default function Home() {
@@ -17,7 +16,10 @@ export default function Home() {
 
   async function getNews() {
     try {
-      const response = await handler(country, lang);
+      const response = await axios.get(
+        `/api/news?lang=${lang}&country=${country}`
+      );
+
       setNews(response);
     } catch (error) {
       setNews([]); 
