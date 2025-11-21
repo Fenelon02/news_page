@@ -1,19 +1,13 @@
-import { useState } from "react";
-import { useForm } from 'react-hook-form';
+import { useEffect, useState } from "react";
 import axios from 'axios';
+import Header from "../components/cards/Header";
 
 export default function Home() {
   const [news, setNews] = useState([]);
-  const { register, handleSubmit, formState: { errors } } = useForm({
-    defaultValues: {
-      lang: "en",
-      country: "us"
-    }
-  });
 
-  const onSubmit = data => {
-    getNews(data.lang, data.country);
-  };
+  useEffect(() => {
+    getNews("en", "us")
+  }, [])
 
   async function getNews(lang, country) {
     try {
@@ -23,7 +17,6 @@ export default function Home() {
 
       setNews(response.data);
     } catch (error) {
-      console.error("Erro ao buscar notícias:", error);
       setNews([]); 
     }
   }
@@ -32,7 +25,7 @@ export default function Home() {
     if (news.length > 0) {
       return news.map((notice) => (
         <div key={notice.url}>
-          <img src={notice.image} alt={notice.title || "image"} />
+          <img src={notice.image} alt={notice.title || "image"}/>
           <h2 className="text-3xl text-blue-500">{notice.title}</h2>
           <p>{notice.description}</p>
         </div>
@@ -48,25 +41,8 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Search news</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
-        <select {...register("lang", { required: true })}>
-          <option value="en">en</option>
-          <option value="pt">pt</option>
-          <option value="es">es</option>
-          <option value="fr">fr</option>
-        </select>
-
-        <select {...register("country", { required: true })}>
-          <option value="us">EUA</option>
-          <option value="br">Brazil</option>
-          <option value="fr">France</option>
-          <option value="es">Spain</option>
-        </select>
-
-        <button type="submit" className="bg-blue-700" >Search</button>
-      </form>
-
+      <Header onSearch={getNews}/>
+      
       <hr />
 
       {renderNews()}
