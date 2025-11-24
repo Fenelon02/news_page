@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import Header from "../components/cards/Header";
 import { set } from "zod";
+import RenderNews from "../components/cards/RenderNews";
 
 export default function Home() {
   const [news, setNews] = useState([]);
@@ -39,7 +40,7 @@ export default function Home() {
   function renderNews() {
     if (news.length > 0) {
       return news.map((notice) => (
-        <div key={notice.url}>
+        <div key={notice.id}>
           <img src={notice.image} alt={notice.title || "image"}/>
           <h2 className="text-3xl text-blue-500">{notice.title}</h2>
           <p>{notice.description}</p>
@@ -59,7 +60,7 @@ export default function Home() {
       <Header onSearch={getNews}/>
       
 
-      {renderNews()}
+      <RenderNews news={news} />
     </div>
   );
 }
