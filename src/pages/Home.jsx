@@ -6,13 +6,13 @@ export default function Home() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    getNews("en", "us")
+    getNews("pt", "br", "general")
   }, [])
 
-  async function getNews(lang, country) {
+  async function getNews(lang, country, category) {
     try {
       const response = await axios.get(
-        `/api/news?lang=${lang}&country=${country}` 
+        `/api/news?lang=${lang}&country=${country}&category=${category}` 
       );
 
       setNews(response.data);
@@ -43,7 +43,6 @@ export default function Home() {
     <div>
       <Header onSearch={getNews}/>
       
-      <hr />
 
       {renderNews()}
     </div>
