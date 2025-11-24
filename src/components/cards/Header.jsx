@@ -26,15 +26,15 @@ const Header = ({onSearch}) => {
     };
 
     const CATEGORIES = [
-        { value: "general", label: "General" },
-        { value: "world", label: "World" },
-        { value: "nation", label: "Nation" },
-        { value: "business", label: "Business" },
-        { value: "technology", label: "Technology" },
-        { value: "entertainment", label: "Entertainment" },
-        { value: "sports", label: "Sports" },
-        { value: "science", label: "Science" },
-        { value: "health", label: "Health" },
+        { value: "general", label: "Geral" },
+        { value: "world", label: "Mundo" },
+        { value: "nation", label: "Nação" },
+        { value: "business", label: "Negócios" },
+        { value: "technology", label: "Tecnologia" },
+        { value: "entertainment", label: "Entreterimento" },
+        { value: "sports", label: "Esportes" },
+        { value: "science", label: "Ciência" },
+        { value: "health", label: "Saúde" },
     ];
 
 
@@ -44,7 +44,7 @@ const Header = ({onSearch}) => {
                <div className="flex flex-row">
                    <img src={logo} alt="logo INH News" className="w-32 h-32 ml-3"/>
                     <div className="flex flex-col items-center justify-center">
-                        <h1 className="text-3xl text-[#E2E2B6] font-extrabold _font-family">INH News</h1>
+                        <h1 className="text-3xl text-[#E2E2B6] font-extrabold _font-family">Diário 10</h1>
                     </div>
                </div>
                <div >
@@ -90,6 +90,8 @@ const Header = ({onSearch}) => {
                     {
                        CATEGORIES.map((cat) => (
                            <Button
+                               key = {cat.value}
+                               id = {cat.value}
                                variant="primary"
                                width="full"
                                children={cat.label}
