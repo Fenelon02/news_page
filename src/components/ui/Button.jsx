@@ -17,7 +17,7 @@ const Button = (props) =>{
 
     return (
         <div>
-            <button className={`${btnClasses} ${props.className || ""}` } onClick={props.onClick}>
+            <button className={`${btnClasses} ${props.className || ""}` } onClick={props.onClick} key={props.id}>
                 {props.icon}
                 {props.children}
             </button>
