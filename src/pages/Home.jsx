@@ -30,29 +30,11 @@ export default function Home() {
     return (
       <div>
         <Header onSearch={getNews}/>
-        <div className="flex flex-col justify-center items-center h-80">
+        <div className="flex flex-col justify-center items-center h-[80vh]">
           <h2 className="text-5xl text-blue-700">Carregando as melhores notícias para você!</h2>
         </div>
       </div>
     )
-  }
-
-  function renderNews() {
-    if (news.length > 0) {
-      return news.map((notice) => (
-        <div key={notice.id}>
-          <img src={notice.image} alt={notice.title || "image"}/>
-          <h2 className="text-3xl text-blue-500">{notice.title}</h2>
-          <p>{notice.description}</p>
-        </div>
-      ));
-    } else {
-      return (
-        <div>
-          <h2>sem noticias</h2>
-        </div>
-      );
-    }
   }
 
   return (
