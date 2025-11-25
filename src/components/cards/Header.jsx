@@ -104,6 +104,7 @@ const Header = ({onSearch}) => {
                                onClick={() => {
                                    setCategory(cat.value);
                                }}
+                               
                            />
                        ))
                     }
