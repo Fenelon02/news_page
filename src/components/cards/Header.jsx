@@ -1,7 +1,7 @@
 import logo from "../../assets/logo.svg"
 import { useForm, FormProvider, useFormContext } from "react-hook-form";
 import Select from "../ui/Select";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "../ui/Button";
 
 const Header = ({onSearch}) => {
@@ -24,6 +24,11 @@ const Header = ({onSearch}) => {
 
         onSearch(data.lang, data.country);
     };
+
+    useEffect(() => {
+        onSearch(lang, country, category);
+    }, [category])
+    
 
     const CATEGORIES = [
         { value: "general", label: "Geral" },
@@ -55,8 +60,8 @@ const Header = ({onSearch}) => {
                                 <Select
                                     options={
                                         [
-                                            {label: "English", value: "en"},
                                             {label: "Português", value: "pt"},
+                                            {label: "English", value: "en"},
                                             {label: "Espanhol", value: "es"},
                                             {label: "Francês", value: "fr"}
                                         ]
@@ -67,8 +72,8 @@ const Header = ({onSearch}) => {
                                 <Select
                                     options={
                                         [
-                                            {label: "EUA", value: "us"},
                                             {label: "Brasil", value: "br"},
+                                            {label: "EUA", value: "us"},
                                             {label: "Espanha", value: "es"},
                                             {label: "França", value: "fr"}
                                         ]
@@ -98,7 +103,6 @@ const Header = ({onSearch}) => {
                                className="h-12"
                                onClick={() => {
                                    setCategory(cat.value);
-                                   onSearch(lang, country, category);
                                }}
                            />
                        ))
