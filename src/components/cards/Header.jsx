@@ -18,16 +18,12 @@ const Header = ({onSearch}) => {
         if(data.country !== country){
             setCountry(data.country);
         }
-        if(data.category !== category){
-            setCategory(data.category);
-        }
-
-        onSearch(data.lang, data.country);
-    };
+        onSearch(data.lang, data.country, category); 
+    }
 
     useEffect(() => {
         onSearch(lang, country, category);
-    }, [category])
+    }, [category]);
     
 
     const CATEGORIES = [
