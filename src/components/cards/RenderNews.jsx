@@ -6,7 +6,7 @@ const RenderNews = ({ news }) => {
         <div className="m-8">
             <div>
               {news.map((article, index) => (
-                <NewsBox article = {article}/>
+                <NewsBox article = {article} key={article.id}/>
               ))}
             </div>
         </div>
