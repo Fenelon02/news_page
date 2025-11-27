@@ -31,7 +31,7 @@ const Header = ({onSearch}) => {
                 </div>
             </div>
             <div className="bg-blue-500 flex mb-4 overflow-x-scroll sm:grid sm:grid-cols-9">
-                  <TopicNavigation setCategory={setCategory}/>  
+                  <TopicNavigation category={category} setCategory={setCategory}/>  
             </div>
         </div>
     )
