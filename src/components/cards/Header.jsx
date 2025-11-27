@@ -1,9 +1,17 @@
 import logo from "../../assets/logo.svg"
 import HeaderForm from "./HeaderForm"
-import CategoriesBtnRender from "./CategoryBtnRender"
+import TopicNavigation from "./TopicNavigation"
+import { useEffect, useState } from "react";
 
 
 const Header = ({onSearch}) => {
+    const [category, setCategory] = useState("general");
+    const [lang, setLang] = useState("pt");
+    const [country, setCountry] = useState("br");
+
+    useEffect(() => {
+        onSearch(lang, country, category);
+    }, [lang, country, category]);
 
     return(
         <div>
@@ -19,11 +27,11 @@ const Header = ({onSearch}) => {
                </div>
 
                 <div className="flex flex-row items-center justify-end">
-                    <HeaderForm onSearch={onSearch}/>
+                    <HeaderForm setCountry={ setCountry } setLang = { setLang }/>
                 </div>
             </div>
-            <div className="bg-blue-500 flex mb-4 overflow-x-scroll">
-                  <CategoriesBtnRender onSearch={onSearch}/>  
+            <div className="bg-blue-500 flex mb-4 overflow-x-scroll sm:grid sm:grid-cols-9">
+                  <TopicNavigation setCategory={setCategory}/>  
             </div>
         </div>
     )
