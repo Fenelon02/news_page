@@ -1,7 +1,7 @@
 const Button = (props) =>{
     const variants = {
-        primary: "bg-blue-500 text-white hover:bg-blue-700 focus:bg-blue-700 focus:rounded-b-xl hover:rounded-b-xl mr-2 px-2 h-8 w-15 flex flex-col items-center justify-center",
-        header:"bg-amber-100 rounded-lg bg-amber-100 mr-2 px-2 h-8 focus:shadow-lg focus:shadow-white hover:shadow-md hover:shadow-amber-100 flex flex-col items-center justify-center mb-2 md:mb-0",  
+        TopicNavigation:"rounded-b-xl text-white hover:bg-blue-700 focus:bg-blue-700 focus:rounded-b-xl hover:rounded-b-xl mr-2 px-2 h-8 w-15 flex flex-col items-center justify-center",
+        header:"rounded-lg bg-amber-100 mr-2 px-2 h-8 focus:shadow-lg focus:shadow-white hover:shadow-md hover:shadow-amber-100 flex flex-col items-center justify-center mb-2 md:mb-0",  
     }
     const width = {
         full: "w-full",
