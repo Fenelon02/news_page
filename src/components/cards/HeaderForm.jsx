@@ -14,7 +14,7 @@ const HeaderForm = ({setCountry, setLang}) => {
 
     return(
         <FormProvider {...methods}>
-            <form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-row">
+            <form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col md:flex-row items-center justify-center md:mr-4">
                 <Select
                     options={
                         [
@@ -48,7 +48,6 @@ const HeaderForm = ({setCountry, setLang}) => {
 
                 <Button 
                     type="submit" 
-                    className="bg-amber-100 h-full" 
                     variant="header"
                     width="full"
                     children={
