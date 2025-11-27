@@ -1,6 +1,6 @@
-const NewsBox = ({article}) => {
+const NewsBox = ({article, boxClassName}) => {
     return (
-        <div key={article.id} className="border border-blue-500 shadow-2xl shadow-neutral-300 m-6 rounded-2xl">
+        <div key={article.id} className={`border border-blue-500 shadow-2xl shadow-neutral-300 m-6 rounded-2xl ${boxClassName}`}>
             <img src={article.image} alt={article.title} className="h-64 w-full object-cover rounded-t-2xl sm:w-full sm:h-140"/>
             <div className="p-4 text-center">
                 <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-blue-700">{article.title}</h2>
