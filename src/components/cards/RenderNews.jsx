@@ -4,10 +4,22 @@ const RenderNews = ({ news }) => {
   if (news.length > 0) {
     return(
         <div className="m-8">
-            <div>
-              {news.map((article, index) => (
-                <NewsBox article = {article} key={article.id}/>
-              ))}
+            <div className='md:grid md:grid-cols-2'>
+              {news.map((article, index) => {
+                  if(index % 3 == 0){ 
+                    return (
+                      <NewsBox 
+                      article = {article} 
+                      key={article.id} 
+                      boxClassName={"col-span-2"} />)
+                    } else {
+                      return (
+                        <NewsBox 
+                        article = {article} 
+                        key={article.id} 
+                        boxClassName={"col-span-2 md:col-span-1"} />)
+                    }
+              })}
             </div>
         </div>
     )
