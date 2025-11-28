@@ -30,7 +30,7 @@ const Header = ({onSearch}) => {
                     <HeaderForm setCountry={ setCountry } setLang = { setLang }/>
                 </div>
             </div>
-            <div className="bg-blue-500 flex mb-4 overflow-x-scroll sm:grid sm:grid-cols-9">
+            <div className="bg-blue-500 flex mb-4 overflow-x-scroll md:overflow-hidden md:grid md:grid-cols-9 shadow-xl shadow-gray-300">
                   <TopicNavigation category={category} setCategory={setCategory}/>  
             </div>
         </div>
