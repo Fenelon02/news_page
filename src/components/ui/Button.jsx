@@ -1,7 +1,7 @@
 const Button = (props) =>{
     const variants = {
         TopicNavigation:"rounded-b-xl text-white hover:bg-blue-700 focus:bg-blue-700 focus:rounded-b-xl hover:rounded-b-xl mr-2 px-2 h-8 w-15 flex flex-col items-center justify-center",
-        header:"text-white border border-white hover:bg-white hover:text-blue-600 p-2 rounded-lg transition-colors mb-2 md:mb-0",  
+        header:"text-white border border-white hover:bg-white hover:text-blue-600 p-2 rounded-lg transition-colors mb-2 md:mb-0 flex items-center justify-center",  
     }
     const width = {
         full: "w-full",
