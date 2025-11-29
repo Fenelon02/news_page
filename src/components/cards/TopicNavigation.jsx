@@ -24,7 +24,7 @@ const TopicNavigation = ({category, setCategory}) => {
                 variant="TopicNavigation"
                 width="full"
                 children={cat.label}
-                className="h-12 bg-blue-700"
+                className="h-12 bg-blue-700 border border-white md:border-0"
                 onClick={() => {
                     setCategory(cat.value)}}/>  
             )} else{
