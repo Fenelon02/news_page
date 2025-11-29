@@ -2,6 +2,7 @@ import logo from "../../assets/logo.svg"
 import HeaderForm from "./HeaderForm"
 import TopicNavigation from "./TopicNavigation"
 import { useEffect, useState } from "react";
+import MDScreenForm from "./MDScreenForm";
 
 
 const Header = ({onSearch}) => {
@@ -15,7 +16,7 @@ const Header = ({onSearch}) => {
 
     return(
         <div>
-            <div className="grid grid-cols-3 bg-blue-700">
+            <div className="grid grid-cols-3 bg-blue-700 relative">
                <div className="flex flex-row">
                    <img src={logo} alt="logo INH News" className="w-32 h-32 ml-3"/>
                     <div className="flex flex-col items-center justify-center">
@@ -26,11 +27,16 @@ const Header = ({onSearch}) => {
                <div >
                </div>
 
-                <div className="flex flex-row items-center justify-end">
-                    <HeaderForm setCountry={ setCountry } setLang = { setLang }/>
+                <div className="flex items-center justify-end">
+                    <div className="hidden md:flex">
+                        <HeaderForm setCountry={ setCountry } setLang = { setLang }/>
+                    </div>
+                    <div className="flex md:hidden absolute top-5 right-5">
+                        <MDScreenForm setLang={ setLang } setCountry={ setCountry } category={category} setCategory={setCategory}/>
+                    </div>
                 </div>
             </div>
-            <div className="bg-blue-500 flex mb-4 overflow-x-scroll md:overflow-hidden md:grid md:grid-cols-9 shadow-xl shadow-gray-300">
+            <div className="hidden bg-blue-500 mb-4 md:grid md:grid-cols-9 shadow-xl shadow-gray-300">
                   <TopicNavigation category={category} setCategory={setCategory}/>  
             </div>
         </div>
