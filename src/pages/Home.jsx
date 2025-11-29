@@ -31,7 +31,7 @@ export default function Home() {
       <div>
         <Header onSearch={getNews}/>
         <div className="flex flex-col justify-center items-center h-[80vh]">
-          <h2 className="text-5xl text-blue-700">Carregando as melhores notícias para você!</h2>
+          <h2 className="text-5xl text-blue-700 flex flex-center items-center">Carregando as melhores notícias para você!</h2>
         </div>
       </div>
     )
