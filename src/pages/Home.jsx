@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import Header from "../components/layout/header/Header";
-import RenderNews from "../components/cards/RenderNews";
+import RenderNews from "../components/cards/notices/RenderNews";
 
 export default function Home() {
   const [news, setNews] = useState([]);
