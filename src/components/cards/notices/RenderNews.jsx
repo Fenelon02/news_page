@@ -1,4 +1,4 @@
-import NewsBox from './news/NewsBox.js';
+import NewsBox from "./NewsBox"
 
 const RenderNews = ({ news }) => {
   if (news.length > 0) {
