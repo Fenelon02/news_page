@@ -29,7 +29,7 @@ export default function Home() {
     return (
       <div>
         <Header onSearch={getNews}/>
-        <div className="flex flex-col justify-center items-center h-[80vh]">
+        <div className="flex flex-col justify-center items-center h-screen pt-[5vh] lg:pt-[9vh]">
           <h2 className="text-5xl text-blue-700 flex flex-center items-center">Carregando as melhores notícias para você!</h2>
         </div>
       </div>
