@@ -1,7 +1,6 @@
 import { useForm, FormProvider } from "react-hook-form";
-import Select from "../ui/Select";
-import { useState } from "react";
-import Button from "../ui/Button";
+import Select from "../../ui/Select"
+import Button from "../../ui/Button";
 
 const HeaderForm = ({setCountry, setLang}) => {
     const methods = useForm()

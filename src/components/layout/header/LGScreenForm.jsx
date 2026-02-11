@@ -1,7 +1,7 @@
 import HeaderForm from "./HeaderForm";
-import TopicNavigation from "./TopicNavigation";
+import TopicNavigation from "../../cards/notices/TopicNavigation";
 import { useState } from "react";
-import Button from "../ui/Button";
+import Button from "../../ui/Button";
 
 const MDScreenForm = ({ setLang, setCountry, category, setCategory }) => {
     const [open, setOpen] = useState(false);

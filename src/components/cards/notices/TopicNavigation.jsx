@@ -1,4 +1,4 @@
-import Button from "../ui/Button";
+import Button from "../../ui/Button";
 
 const CATEGORIES = [
     { value: "general", label: "Geral" },
@@ -24,7 +24,7 @@ const TopicNavigation = ({category, setCategory}) => {
                 variant="TopicNavigation"
                 width="full"
                 children={cat.label}
-                className="h-12 bg-blue-700 border border-white md:border-0"
+                className="h-12 max-h-[4vh] bg-blue-700 border border-white md:border-0"
                 onClick={() => {
                     setCategory(cat.value)}}/>  
             )} else{
@@ -35,7 +35,7 @@ const TopicNavigation = ({category, setCategory}) => {
                     variant="TopicNavigation"
                     width="full"
                     children={cat.label}
-                    className="h-12 bg-blue-500"
+                    className="h-12 max-h-[4vh]  bg-blue-500"
                     onClick={() => {
                         setCategory(cat.value)}}/>  
                 )

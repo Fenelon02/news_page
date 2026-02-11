@@ -1,8 +1,8 @@
-import logo from "../../assets/logo.svg"
-import HeaderForm from "./HeaderForm"
-import TopicNavigation from "./TopicNavigation"
+import logo from "../../../assets/logo.svg"
+import HeaderForm from "./HeaderForm";
+import TopicNavigation from "../../cards/notices/TopicNavigation"
 import { useEffect, useState } from "react";
-import MDScreenForm from "./MDScreenForm";
+import MDScreenForm from "./LGScreenForm";
 
 
 const Header = ({onSearch}) => {
