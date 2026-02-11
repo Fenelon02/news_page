@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import Header from "../components/layout/header/Header";
 import RenderNews from "../components/cards/notices/RenderNews";
+import Footer from "../components/layout/footer/Footer";
 
 export default function Home() {
   const [news, setNews] = useState([]);
@@ -32,6 +33,7 @@ export default function Home() {
         <div className="flex flex-col justify-center items-center h-screen pt-[5vh] lg:pt-[9vh]">
           <h2 className="text-5xl text-blue-700 flex flex-center items-center">Carregando as melhores notícias para você!</h2>
         </div>
+       <Footer/>
       </div>
     )
   }
@@ -40,6 +42,7 @@ export default function Home() {
     <div>
       <Header onSearch={getNews}/>
       <RenderNews news={news} />
+      <Footer/>
     </div>
   );
 }
