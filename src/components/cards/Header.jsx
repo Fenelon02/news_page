@@ -15,31 +15,28 @@ const Header = ({onSearch}) => {
     }, [lang, country, category]);
 
     return(
-        <div>
-            <div className="grid grid-cols-3 bg-blue-700 relative">
-               <div className="flex flex-row">
-                   <img src={logo} alt="logo INH News" className="w-32 h-32 ml-3"/>
+        <header className="h-[5vh] sticky top-0">
+            <div className="grid grid-cols-3 bg-blue-700">
+               <div className="flex flex-row gap-2 ml-3 col-span-2">
+                   <img src={logo} alt="logo Diário 10" className="md:w-36 md:h-32 w-22 h-20 col-span-1"/>
                     <div className="flex flex-col items-center justify-center">
-                        <h1 className="text-3xl text-[#E2E2B6] font-extrabold _font-family">Diário 10</h1>
+                        <h1 className="text-xl md:text-3xl lg:text-3xl text-[#E2E2B6] font-extrabold _font-family">Diário 10</h1>
                     </div>
                </div>
 
-               <div >
-               </div>
-
-                <div className="flex items-center justify-end">
-                    <div className="hidden md:flex">
+                <div className="flex items-center justify-end mr-3 lg:mr-0">
+                    <div className="hidden lg:flex">
                         <HeaderForm setCountry={ setCountry } setLang = { setLang }/>
                     </div>
-                    <div className="flex md:hidden absolute top-5 right-5">
+                    <div className="flex lg:hidden">
                         <MDScreenForm setLang={ setLang } setCountry={ setCountry } category={category} setCategory={setCategory}/>
                     </div>
                 </div>
             </div>
-            <div className="hidden bg-blue-500 mb-4 md:grid md:grid-cols-9 shadow-xl shadow-gray-300">
+            <div className="hidden bg-blue-500 mb-4 lg:grid lg:grid-cols-9 shadow-xl shadow-gray-300">
                   <TopicNavigation category={category} setCategory={setCategory}/>  
             </div>
-        </div>
+        </header>
     )
 }
 
