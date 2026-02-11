@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import Header from "../components/cards/Header";
-import { set } from "zod";
 import RenderNews from "../components/cards/RenderNews";
 
 export default function Home() {
@@ -40,8 +39,6 @@ export default function Home() {
   return (
     <div>
       <Header onSearch={getNews}/>
-      
-
       <RenderNews news={news} />
     </div>
   );
