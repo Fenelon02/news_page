@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import Header from "../components/cards/Header";
+import Header from "../components/layout/header/Header";
 import RenderNews from "../components/cards/RenderNews";
 
 export default function Home() {
