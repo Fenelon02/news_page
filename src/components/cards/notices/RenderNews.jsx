@@ -3,7 +3,7 @@ import NewsBox from "./NewsBox"
 const RenderNews = ({ news }) => {
   if (news.length > 0) {
     return(
-        <div className="m-8 pt-[5vh] lg:pt-[9vh]">
+        <div className="m-8 pt-[5vh] lg:pt-[10vh]">
             <div className='lg:grid lg:grid-cols-2'>
               {news.map((article, index) => {
                   if(index % 3 == 0){ 

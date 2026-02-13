@@ -14,7 +14,7 @@ const HeaderForm = ({setCountry, setLang}) => {
 
     return(
         <FormProvider {...methods}>
-            <form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col md:flex-row items-center justify-center md:mr-4 gap-3">
+            <form onSubmit={methods.handleSubmit(onSubmit)} className="flex items-center justify-center lg:mr-4 gap-3">
                 <Select
                     options={
                         [

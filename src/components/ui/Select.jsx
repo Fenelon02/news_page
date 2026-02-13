@@ -14,7 +14,7 @@ const Select = ({ options, selectName }) => {
   return (
     <div className="relative w-44 md:w-52">
       
-      <div onClick={() => setOpen(!open)} className=" w-full bg-blue-600 text-[#E2E2B6] font-medium border border-blue-400 rounded-xl px-3 py-2 shadow-sm transition-all duration-200 hover:bg-blue-400 cursor-pointer flex justify-between items-center" >
+      <div onClick={() => setOpen(!open)} className=" w-full bg-blue-600 text-white font-medium border border-blue-400 rounded-xl px-3 py-2 shadow-sm transition-all duration-200 hover:bg-blue-400 cursor-pointer flex justify-between items-center" >
         {selectName}
         <ChevronDown size={16} className={`transition-transform ${open ? "rotate-180" : ""}`}/>
       </div>
