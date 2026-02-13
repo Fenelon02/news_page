@@ -26,7 +26,7 @@ const RenderNews = ({ news }) => {
   } else {
     return (
       <div className="flex flex-col items-center justify-center h-screen pt-[5vh] lg:pt-[9vh]">
-        <h2 className="text-6xl text-blue-700">Sem noticias no momento.</h2>
+        <h2 className="lg:text-6xl md:text-5xl text-4xl text-blue-700 text-center font-bold">Sem noticias no momento. <br/> Aguarde mais atualizações.</h2>
       </div>
     );
   }
