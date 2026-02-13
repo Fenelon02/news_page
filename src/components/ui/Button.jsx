@@ -1,7 +1,7 @@
 const Button = (props) =>{
     const variants = {
-        TopicNavigation:"mb-3 md:m-0 transition-colors rounded-xl md:rounded-none md:rounded-b-xl text-white hover:bg-blue-700 focus:bg-blue-700 md:mr-2 px-2 h-8 w-15 flex flex-col items-center justify-center hover:border hover:border-white hover:md:border-0 ",
-        header:"w-full bg-blue-600 text-[#E2E2B6] font-medium border border-blue-400 rounded-xl px-3 py-2 shadow-sm transition-all duration-200 hover:bg-blue-400 cursor-pointer flex justify-between items-center",
+        TopicNavigation:"my-3 py-4 md:text-xl lg:text-base lg:m-0 transition-colors rounded-xl lg:rounded-none lg:rounded-b-xl text-white hover:bg-blue-700 focus:bg-blue-700 lg:mr-2 px-2 h-8 w-15 flex flex-col items-center justify-center hover:border hover:border-white hover:lg:border-0 ",
+        header:"w-full bg-blue-600  text-white font-medium border border-blue-400 rounded-xl px-3 py-2 shadow-sm transition-all duration-200 hover:bg-blue-400 cursor-pointer flex justify-between items-center",
         primary:"bg-transparent text-white p-2 rounded-lg flex items-center justify-center"
     }
     const width = {
