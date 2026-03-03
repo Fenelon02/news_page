@@ -1,63 +1,29 @@
-const techList = [
-  "React",
-  "Vite",
-  "TailwindCSS",
-  "GNews API",
-  "Axios",
-  "React Hook Form",
-  "Lucide Icons",
-  "React Router"
-];
+export default function Footer() {
+  return (
+    <footer className="bg-blue-900 text-gray-300 py-8">
+      <div className=" mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div>
+          <h2 className="text-xl font-bold text-white mb-2">News Page</h2>
+          <p className="text-sm">
+            Sua plataforma de notícias nota 10.            
+          </p>
+        </div>
 
-const contacts = [
-  {
-    name: "GitHub",
-    link: "https://github.com/Fenelon02"
-  },
-  {
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/joao-fenelon-ramos-soares/"
-  }
-];
+        <div>
+          <h2 className="text-lg font-semibold text-white mb-2">Links Úteis</h2>
+          <ul className="space-y-1 text-sm">
+            <li><a href="/" className="hover:text-white">Início</a></li>
+            <li><a href="/sobre" className="hover:text-white">Sobre</a></li>
+            <li><a href="/contato" className="hover:text-white">Contato</a></li>
+            <li><a href="/privacidade" className="hover:text-white">Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
 
-
-
-export default function Footer(){
-    return(
-        <footer className="bg-blue-900">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="p-4">
-                    <h2 className="text-xl md:text-2xl font-bold text-white">Desenvolvedor</h2>
-                    <p className="text-white md:text-xl">João Fenelon</p>
-                </div>
-                <div className="p-4">
-                    <h2 className="text-xl md:text-2xl font-bold text-white">Tecnologias Utilizadas</h2>
-                    <ul>
-                        {techList.map((tech, index) => (
-                            <li className="flex items-center gap-2 p-1">
-                                <div className="rounded-full h-1 w-1 bg-amber-50"></div>
-                                <p className="text-white md:text-xl" key={index}>{tech}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="p-4">
-                    <h2 className="text-xl md:text-2xl font-bold text-white">Contatos</h2>
-                    <adress>
-                        <ul>
-                            {contacts.map((contact, index) => (
-                                <li className="flex items-center gap-2 p-1">
-                                    <div className="rounded-full h-1 w-1 bg-amber-50"></div>
-                                    <a href={contact.link} className="text-white md:text-xl" key={index}>{contact.name}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </adress>
-                </div>
-            </div>
-            <div className="text-center p-3 bg-blue-950 text-white font-light">
-                Todos os direitos reservados ®Diário 10
-            </div>
-        </footer>
-    )
+      <div className="mt-8 text-center text-sm text-gray-400">
+        © {new Date().getFullYear()} News Page. Todos os direitos reservados.
+      </div>
+    </footer>
+  );
 }
