@@ -27,7 +27,8 @@ const HeaderForm = ({setCountry, setLang}) => {
                             {label: "日本語", value: "ja"}
                         ]
                     }
-                    selectName="Idioma"
+                    name="lang"
+                    placeholder="Idioma"
                 />
                 <Select
                     options={
@@ -41,7 +42,8 @@ const HeaderForm = ({setCountry, setLang}) => {
                             {label: "日本", value: "jp"}
                         ]
                     }
-                    selectName="País"
+                    name="country"
+                    placeholder="País"
                 />
 
                 <Button
@@ -50,7 +52,7 @@ const HeaderForm = ({setCountry, setLang}) => {
                     width="header"
                     className="md:w-full"
                     children={
-                            <Search />
+                        <Search />
                     }
                 />
                     
