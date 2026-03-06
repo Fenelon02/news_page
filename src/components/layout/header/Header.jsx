@@ -45,7 +45,7 @@ const Header = ({onSearch}) => {
 
             </div>
 
-            <div className="hidden bg-blue-500 mb-4 lg:grid lg:grid-cols-9 shadow-xl shadow-gray-300">
+            <div className="hidden bg-blue-500 mb-4 lg:grid lg:grid-cols-9 shadow-md shadow-gray-500">
                   <TopicNavigation category={category} setCategory={setCategory}/>  
             </div>
 
