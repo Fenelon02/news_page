@@ -1,4 +1,4 @@
-# News Page 📰
+# Diário 10 📰
 
 - Uma aplicação web desenvolvida em **React** que consome a **GNews API** para exibir notícias em tempo real, permitindo filtragem por idioma, país e categoria.  
 - Projeto criado para praticar consumo de APIs, componentização, estado global e estilização com Tailwind.
