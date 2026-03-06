@@ -27,7 +27,7 @@ const HeaderForm = ({setCountry, setLang}) => {
                             {label: "日本語", value: "ja"}
                         ]
                     }
-                    selectName="lang"
+                    selectName="Idioma"
                 />
                 <Select
                     options={
@@ -41,7 +41,7 @@ const HeaderForm = ({setCountry, setLang}) => {
                             {label: "日本", value: "jp"}
                         ]
                     }
-                    selectName="country"
+                    selectName="País"
                 />
 
                 <Button
