@@ -6,6 +6,7 @@ import Footer from "../components/layout/footer/Footer";
 
 export default function Home() {
   const [news, setNews] = useState([]);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -22,26 +23,29 @@ export default function Home() {
       setNews(response.data);
     } catch (error) {
       setNews([]); 
+      setError(error);
     }
     setLoading(false);
-  }
-
-  if(loading){
-    return (
-      <div>
-        <Header onSearch={getNews}/>
-        <div className="flex flex-col justify-center items-center h-screen pt-[5vh] lg:pt-[9vh]">
-          <h2 className="lg:text-6xl md:text-5xl text-4xl text-blue-700 text-center font-bold">Carregando as melhores notícias para você!</h2>
-        </div>
-       <Footer/>
-      </div>
-    )
   }
 
   return (
     <div>
       <Header onSearch={getNews}/>
-      <RenderNews news={news} />
+      {loading && (
+        <div className="flex flex-col justify-center items-center h-screen pt-[5vh] lg:pt-[9vh]">
+          <h2 className="lg:text-6xl md:text-5xl text-4xl text-blue-700 text-center font-bold">Carregando as melhores notícias para você!</h2>
+        </div>
+      )}
+
+      {error && (
+        <div className="flex flex-col justify-center items-center h-screen pt-[5vh] lg:pt-[9vh]">
+          <h2 className="lg:text-6xl md:text-5xl text-4xl text-blue-700 text-center font-bold">Erro ao carregar as notícias!</h2>
+        </div>
+      )}
+
+      {!loading && !error && <RenderNews news={news} />}
+
+
       <Footer/>
     </div>
   );
