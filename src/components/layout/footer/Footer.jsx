@@ -14,9 +14,9 @@ export default function Footer() {
           <h2 className="text-lg font-semibold text-white mb-2">Links Úteis</h2>
           <ul className="space-y-1 text-sm">
             <li><a href="/" className="hover:text-white">Início</a></li>
-            <li><a href="/sobre" className="hover:text-white">Sobre</a></li>
-            <li><a href="/contato" className="hover:text-white">Contato</a></li>
-            <li><a href="/privacidade" className="hover:text-white">Privacidade</a></li>
+            <li><a href="#" className="hover:text-white">Sobre</a></li>
+            <li><a href="#" className="hover:text-white">Contato</a></li>
+            <li><a href="#" className="hover:text-white">Privacidade</a></li>
           </ul>
         </div>
       </div>
