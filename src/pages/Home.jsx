@@ -15,6 +15,7 @@ export default function Home() {
 
   async function getNews(lang, country, category) {
     setLoading(true);
+    setError(null);
     try {
       const response = await axios.get(
         `/api/news?lang=${lang}&country=${country}&category=${category}` 
@@ -43,7 +44,7 @@ export default function Home() {
         </div>
       )}
 
-      {!loading && !error && <RenderNews news={news} />}
+      {news.length > 0 && <RenderNews news={news} />}
 
 
       <Footer/>
