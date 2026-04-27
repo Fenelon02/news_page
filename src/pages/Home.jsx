@@ -25,8 +25,9 @@ export default function Home() {
     } catch (error) {
       setNews([]); 
       setError(error);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   }
 
   return (
