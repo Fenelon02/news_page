@@ -12,7 +12,7 @@ export default async function handler(request, response) {
     }
 
     const apiResponse = await axios.get(
-      `https://gnews.io/api/v4/top-headlines?category=${category}&lang=${lang}&country=${country}&max=10&apikey=${API_KEY}`,
+      `https://gnews.io/api/v4/top-headlines?category=${category}&lang=${lang}&country=${country}&max=10&apikey=${API_KEY}`
     );
     
     return response.status(200).json(apiResponse.data.articles);
@@ -20,8 +20,10 @@ export default async function handler(request, response) {
   } catch (error) {
     if (error.response) {
       return response.status(error.response.status).json({
-        details: error.response.data
+        error: error.response.data.message
       });
     }
-    return response.status(500).json({ error: "Internal error", details: error.message });  }
+
+    return response.status(500).json({ error: "Internal error" });
+  }
 }
