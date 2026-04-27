@@ -18,6 +18,10 @@ export default async function handler(request, response) {
     return response.status(200).json(apiResponse.data.articles);
 
   } catch (error) {
-    return response.status(500).json({ error: "An error was detected when searching for news", details: error.message });
-  }
+    if (error.response) {
+      return response.status(error.response.status).json({
+        details: error.response.data
+      });
+    }
+    return response.status(500).json({ error: "Internal error", details: error.message });  }
 }
